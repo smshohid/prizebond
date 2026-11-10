@@ -1,0 +1,15 @@
+/vendor/
+/.env
+/composer.phar
+/storage/logs/*
+/storage/imports/*
+/storage/cache/*
+/storage/exports/*
+/storage/backups/*
+/storage/sessions/*
+/public/uploads/*
+!/storage/**/.gitkeep
+!/public/uploads/.gitkeep
+.phpunit.cache/
+.phpunit.result.cache
+*.log

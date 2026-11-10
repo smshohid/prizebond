@@ -1,0 +1,28 @@
+:root{--pbm-navy:#0b2447;--pbm-blue:#19376d;--pbm-accent:#576cbc;--pbm-green:#1a7f4b;--pbm-soft:#f4f7fc}
+body.pbm-body{font-family:"Inter","Noto Sans Bengali",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#fff;color:#1c2333}
+html[lang=bn] body{font-family:"Noto Sans Bengali","Inter",system-ui,sans-serif;line-height:1.7}
+.pbm-nav{background:linear-gradient(90deg,var(--pbm-navy),var(--pbm-blue))}
+.pbm-side{background:var(--pbm-navy);min-height:100vh}
+.pbm-side .nav-link:hover,.pbm-side .nav-link:focus{color:#fff!important;background:rgba(255,255,255,.08);border-radius:.4rem}
+.pbm-footer{background:var(--pbm-navy);color:#b9c4dd}
+.pbm-footer a{color:#dbe4ff;text-decoration:none}.pbm-footer a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,var(--pbm-navy) 0%,var(--pbm-blue) 60%,var(--pbm-accent) 100%);color:#fff;border-radius:1rem}
+.hero .form-control,.hero .form-select{border:0}
+.stat-card{border:0;border-left:4px solid var(--pbm-accent);background:var(--pbm-soft)}
+.stat-card .num{font-size:1.9rem;font-weight:700;color:var(--pbm-navy)}
+.verified-badge{background:var(--pbm-green)}
+.num-chip{font-variant-numeric:tabular-nums;letter-spacing:.06em;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--pbm-soft);border:1px solid #d7e0f3;border-radius:.4rem;padding:.2rem .55rem;display:inline-block;margin:.15rem}
+.num-chip.win{background:#e7f6ee;border-color:#9fd5b8;color:#0f5a34;font-weight:600}
+.step-icon{width:3rem;height:3rem;border-radius:50%;background:var(--pbm-soft);color:var(--pbm-accent);display:inline-flex;align-items:center;justify-content:center;font-size:1.4rem}
+.table-responsive{border-radius:.5rem}
+.card-hover{transition:box-shadow .15s}.card-hover:hover{box-shadow:0 .4rem 1rem rgba(11,36,71,.12)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+textarea.numbers{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;min-height:6rem}
+.faq-a{color:#3d4658}
+.tier-title{border-left:4px solid var(--pbm-green);padding-left:.6rem}
+.btn-busy{pointer-events:none;opacity:.75}
+@media (max-width:991.98px){.pbm-side{min-height:auto}}
+.narrow{max-width:820px}
+
+/* mandatory-field marker */
+.form-label.required::after{content:" *";color:#dc3545;font-weight:700}

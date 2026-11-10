@@ -1,0 +1,26 @@
+# Prize Bond Monitor BD - Apache front controller (document root must be this public/ directory)
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+# Overrides the safety-net deny in the project-root .htaccess for the public directory only
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Deny dot-files and anything that is not a public asset type
+    RewriteRule (^|/)\.(?!well-known) - [F]
+    # Serve real files (assets) directly, everything else goes to the front controller
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    <FilesMatch "\.(css|js|woff2?|png|jpg|svg|ico)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,9 @@
+# Safety net ONLY. The correct deployment points the web server's document root at public/.
+# If this file is reached, the project root is exposed - everything except public/ is denied.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

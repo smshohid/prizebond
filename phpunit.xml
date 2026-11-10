@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         failOnWarning="true"
+         failOnRisky="true">
+    <testsuites>
+        <testsuite name="Unit"><directory>tests/Unit</directory></testsuite>
+        <testsuite name="Integration"><directory>tests/Integration</directory></testsuite>
+        <testsuite name="Feature"><directory>tests/Feature</directory></testsuite>
+    </testsuites>
+    <php>
+        <!-- Isolated test database. NEVER point this at a production database: tests wipe dynamic tables. -->
+        <env name="APP_ENV" value="testing" force="true"/>
+        <env name="APP_URL" value="http://localhost" force="true"/>
+        <env name="APP_BASE_PATH" value="" force="true"/>
+        <env name="DB_DATABASE" value="prizebond_test" force="true"/>
+        <env name="MAIL_TRANSPORT" value="array" force="true"/>
+        <env name="HTTP_RETRIES" value="1" force="true"/>
+        <env name="SOURCE_ALLOWED_HOSTS" value="www.bb.org.bd,bb.org.bd,prizebond.ird.gov.bd,nationalsavings.gov.bd" force="true"/>
+    </php>
+</phpunit>
